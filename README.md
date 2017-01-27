@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Download the project and unzip it
 			or
 * Clone the project to the local machine.
+```
 
 ### Prerequisites
 
@@ -40,9 +41,9 @@ Example of a hosts file
 ```
 ansible-playbook file_integrity_check.yml
 ```
-```
-Extra points
-```
+
+### Extra points
+
 In hosts file - 
 * webserver - Remote server from which files are downloaded
 * local - Local system upon which files are to be checked with.
