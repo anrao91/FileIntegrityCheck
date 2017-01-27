@@ -5,7 +5,7 @@
           - name: Generate md5sum for all files
             shell: find -type f ! -iname "md5sum.txt" -exec md5sum "{}" + > md5sum.txt 
             args:
-                chdir: /home/anusha/Code/Python/Ansible
+                chdir: /path/to/files/in/local_system
 
 - name: Check stat command working
   hosts: webservers
@@ -13,10 +13,10 @@
           - name: Change the working directory to somedir/ before executing the command.
             shell: find -type f ! -iname "md5sum.txt" -exec md5sum "{}" + > md5sum.txt 
             args:
-                chdir: /home/anusha/Code/Python/Ansible_test
+                chdir: /path/to/files/in/remote_system 
           
           - name: Copy files from remote server to local system
-            synchronize: src=/home/anusha/Code/Python/Ansible_test/ dest=/home/anusha/Code/Python/tmp/
+            synchronize: src=/path/to/files/in/remote_system dest=/path/to/tmp_dir/
 #            delegate_to: local  
 
 - name: Overwrite md5sum file of remote server to local md5sum file and check if any file has changed
